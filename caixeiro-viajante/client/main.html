@@ -1,0 +1,78 @@
+<head>
+  <title>simple</title>
+</head>
+
+<body>
+  <h1>Welcome to PCV!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <table>
+    <tr>
+      <td>
+        Origin:
+      </td>
+      <td>
+        <select name="origin">
+          {{#each cities}}
+            <option value="{{.}}">{{.}}</option>
+          {{/each}}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Population:
+      </td>
+      <td>
+        <input type="number" name="population" value="2000" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Ages:
+      </td>
+      <td>
+        <input type="number" name="ages" value="100" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Recombination Range:
+      </td>
+      <td>
+        <input type="number" name="recombinationRangeStart" value="1" />
+        <input type="number" name="recombinationRangeEnd" value="25" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Mutation:
+      </td>
+      <td>
+        <select name="mutation">
+          <option value="">True</option>
+          <option value="1">False</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Mutation Range:
+      </td>
+      <td>
+        <input type="number" name="mutationRangeStart" value="5" />
+        <input type="number" name="mutationRangeEnd" value="7" />
+      </td>
+    </tr>
+  </table>
+  <button>Execute</button>
+
+  <br/>
+  <br/>
+
+  <div>Distance: {{distance}}</div>
+  <div>Path: {{path}}</div>
+</template>
